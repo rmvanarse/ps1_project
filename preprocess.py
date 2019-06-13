@@ -53,7 +53,7 @@ print(x1, y1, x2, y2)
 cv2.rectangle(bg_eliminated_img,(x1,y1),(x2,y2),(0,255,0))
 
 #Scale Normalization
-scale_normalized_img = bg_eliminated_img[y1:y2, x1:x2]
+scale_normalized_img = cv2.resize(bg_eliminated_img[y1:y2, x1:x2], (NORMALIZED_X,NORMALIZED_Y))
 
 #Display
 cv2.imshow('image',bg_eliminated_img)
