@@ -26,13 +26,10 @@ scale_y = SIGNATURE_CROP[2] - SIGNATURE_CROP[0]
 median_blurred_img = cv2.medianBlur(img, MEDIANBLUR_KERNEL_SIZE)
 ret, bg_eliminated_img = cv2.threshold(median_blurred_img, 127, 255, cv2.THRESH_BINARY)
 
-#temp_img = cv2.medianBlur(bg_eliminated_img, MEDIANBLUR_KERNEL_SIZE*3)
-#emp_img = temp_img*4
-img_contours, hierarchy = cv2.findContours(bg_eliminated_img,cv2.RETR_LIST,cv2.CHAIN_APPROX_SIMPLE)
-#img_contours, hierarchy = cv2.findContours(bg_eliminated_img,1,2)
 
-#cnt_temp = img_contours[0]
-#M = cv2.moments(cnt_temp)
+img_contours, hierarchy = cv2.findContours(bg_eliminated_img,cv2.RETR_LIST,cv2.CHAIN_APPROX_SIMPLE)
+
+
 
 x2=0
 y2=0
@@ -54,6 +51,6 @@ cv2.rectangle(bg_eliminated_img,(x1,y1),(x2,y2),(0,255,0))
 
 #Display
 cv2.imshow('image',bg_eliminated_img)
-#cv2.imshow('im2', temp_img)
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()
