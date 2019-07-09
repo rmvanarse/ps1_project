@@ -14,7 +14,7 @@ import numpy as np
 IMAGE_FILE = 'signature_sketch.jpg'
 
 SIGNATURE_CROP = [0,0,210,460] #Temporary values
-MEDIANBLUR_KERNEL_SIZE = 5
+MEDIANBLUR_KERNEL_SIZE = 3
 NORMALIZED_X, NORMALIZED_Y = 200, 100
 
 #Load Image
@@ -56,7 +56,7 @@ cv2.rectangle(bg_eliminated_img,(x1,y1),(x2,y2),(0,255,0))
 scale_normalized_img = cv2.resize(bg_eliminated_img[y1:y2, x1:x2], (NORMALIZED_X,NORMALIZED_Y))
 
 #Display
-cv2.imshow('image',bg_eliminated_img)
+cv2.imshow('image',img)
 cv2.imshow('im2', scale_normalized_img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
