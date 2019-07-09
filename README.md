@@ -33,22 +33,22 @@ The user only needs to run the executable to use the system. To run the executab
 ```
 
 Arguments:
-- ```
+```
 <anchor_path>
 ```
 This is the path to the anchor image, i.e. the original signature of the person from the
 database of the bank.
-- ```
+```
 <original_signature_path>
 ```
 This is the path to another known authentic signature of the same person.
 The input signature will be compared to the anchor as well as this image and the two differences
 obtained will be compared. This file is currently needed for reliability of the system and may not be needed for better models.
-- ```
+```
 <input_img_path>
 ```
 This is the path to the preprocessed input signature.
-- ```
+```
 <threshold>
 ```
 Used for comparison. The value of the threshold that was used in this
@@ -61,3 +61,7 @@ implementation was 1. Since this value gives a good accuracy, we recommend keepi
 * [Google Colab]
 * [Jupyter Notebook]
 
+## Developers
+
+* **Rishikesh Vanarse** - *CSE undergrad, BITS Pilani Goa* - [RMVanarse](https://github.com/rmvanarse)
+* **Aditya Ahuja** - *CSE undergrad, BITS Pilani Goa* - [AdiAh](https://github.com/adiah80)
